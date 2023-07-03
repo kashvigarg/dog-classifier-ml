@@ -1,0 +1,47 @@
+Questions regarding Uploaded Image Classification:
+
+1. Did the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed? If not, report the differences in the classifications.
+
+Answer: Yes, the three model architectures classified the chosen breed of dog in Dog_01.jpg as the same breed (correctly).
+
+
+2. Did each of the three model architectures classify the breed of dog in Dog_01.jpg to be the same breed of dog as that model architecture classified Dog_02.jpg? If not, report the differences in the classifications.
+
+Answer: Yes, the three model architectures classified the chosen breed of dog in Dog_02.jpg as the same breed (correctly).
+
+
+3. Did the three model architectures correctly classify Animal_Name_01.jpg and Object_Name_01.jpg to not be dogs? If not, report the misclassifications.
+
+Answer: All three of the models classified Animal_Name_01.jpg correctly. 
+        But, for Object_Name_01.jpg, only RESNET was able to correctly classify the chosen object. 
+        However, the findings of ALEXNET and VGG were exactly the same for this case too. 
+
+
+4. Based upon your answers for questions 1. - 3. above, select the model architecture that you feel did the best at classifying the four uploaded images. Describe why you selected that model architecture as the best on uploaded image classification.
+
+Answer: Based on my findings, I vote VGG as the best and most efficient model to solve the problem at hand. 
+        Reasoning Metrics :
+                       -----------------------------------------------------------------------
+                       | model  | % dog | % not dog | % match | % breed match | time avg (m) |
+                       ------------------------------------------------------------------------
+                       | Alexnet|  100  |    100    |   75   |        80      |      0:17     |
+                       ------------------------------------------------------------------------
+                       | Vgg    |  100  |    100    |  87.5   |      93.3     |      1:30     |
+                       ------------------------------------------------------------------------
+                       | Resnet |  100  |     90    |  82.5   |       90      |      0:50     |
+                       ------------------------------------------------------------------------
+                       * time avg has been calculated over three consecutive readings
+               
+               1. BEST is_dog % classification =100
+               2. BEST is_not_dog % classification =190
+               3. BEST % match classification =87.5
+               4. BEST breed match % classification =93.3
+               
+               Although VGG stands out to be the obvious winner when looking at it's classification rates, 
+               but it also returns an average runtime of 1m 30s, which is good for a 40 image
+               test model, yet becomes super slow for any dataset of size>=100 images. 
+               RESNET provides the second-best time average i.e. 50 ms, along with comparably good results. 
+               
+               Yet, according to the project's 2 main objectives, i.e. to correctly classify dog images,
+               and tabulate their breeds, VGG remains the optimal solution with highest performance percentage.
+                    

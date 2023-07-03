@@ -1,0 +1,77 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = resnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 4 key-value pairs.
+Below are 4 of them:
+ 1 key:                     Dog_01.jpg  label:                        dog
+ 2 key:                    Frog_01.jpg  label:                       frog
+ 3 key:                     Dog_02.jpg  label:                        dog
+ 4 key:                     Bag_01.jpg  label:                        bag
+
+     MATCH:
+
+                   Frog_01.jpg: 
+Real:                       frog   Classifier:           tree frog, tree-frog
+
+ NOT A MATCH:
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:              samoyed, samoyede
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:              samoyed, samoyede
+
+                    Bag_01.jpg: 
+Real:                        bag   Classifier: backpack, back pack, knapsack, packsack, rucksack, haversack
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+     MATCH:
+
+                   Frog_01.jpg: 
+Real:                       frog   Classifier:           tree frog, tree-frog  
+PetLabelDog: 0  ClassLabelDog: 0
+
+ NOT A MATCH:
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:              samoyed, samoyede  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                    Dog_02.jpg: 
+Real:                        dog   Classifier:              samoyed, samoyede  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                    Bag_01.jpg: 
+Real:                        bag   Classifier: backpack, back pack, knapsack, packsack, rucksack, haversack  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 4 # Matches: 1 # NOT Matches: 3
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  4  N Dog Images:  2  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+
+*** Results Summary for CNN Model Architecture RESNET ***
+N Images            :   4
+N Dog Images        :   2
+N Not-Dog Images    :   2
+
+Pct_Match           :                           25.0
+Pct_Correct_Dogs    :                          100.0
+Pct_Correct_Breed   :                            0.0
+Pct_Correct_Notdogs :                          100.0
+ 
+
+INCORRECT Dog Breed Assignment:
+Real:                        dog   Classifier:              samoyed, samoyede
+Real:                        dog   Classifier:              samoyed, samoyede
+
+** Total Elapsed Runtime: 0:0:4.623
